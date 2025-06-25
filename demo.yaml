@@ -75,6 +75,9 @@ spec:
               value: "1.0"
             - name: APP_COLOR
               value: "#efefef"
+          envFrom:
+          - configMapRef:
+              name: nr-license-key 
           ports:
             - name: http
               containerPort: 5000

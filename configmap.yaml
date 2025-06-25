@@ -1,0 +1,7 @@
+apiVersion: apps/v1
+kind: ConfigMap
+namespace: newrelic
+metadata:
+  name: nr-license-key
+data:
+  NEW_RELIC_LICENSE_KEY: "13d78512d44a176c07c4131f59ff451eFFFFNRAL"
