@@ -13,4 +13,4 @@ EXPOSE 5000
 
 WORKDIR "/app"
 ENTRYPOINT ["dumb-init", "--"]
-CMD ["node", "./server.js"]
+CMD ["node", "-r", "newrelic", "./server.js"]

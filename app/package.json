@@ -6,7 +6,8 @@
   "homepage": "https://kuma.io",
   "dependencies": {
     "express": "~4.21.2",
-    "ioredis": "~4.17.3"
+    "ioredis": "~4.17.3",
+    "newrelic": "latest"
   },
   "engines": {
     "node": ">= 13.12.0"

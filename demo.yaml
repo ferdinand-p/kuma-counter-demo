@@ -65,7 +65,7 @@ spec:
     spec:
       containers:
         - name: demo-app
-          image: "kumahq/kuma-demo"
+          image: "radams371/kuma-counter-demo:latest"
           env:
             - name: REDIS_HOST
               value: "redis.kuma-demo.svc.cluster.local"

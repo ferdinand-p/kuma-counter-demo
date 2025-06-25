@@ -1,0 +1,23 @@
+apiVersion: newrelic.com/v1alpha2
+kind: Instrumentation
+metadata:
+  name: newrelic-instrumentation
+  namespace: newrelic
+spec:
+  agent:
+    # Values supported: dotnet, java, nodejs, python, ruby, php
+    language: nodejs
+
+    # Values supported: newrelic-java-init:latest, newrelic-dotnet-init:latest, newrelic-node-init:latest, newrelic-python-init:latest, newrelic-ruby-init:latest, newrelic-php-init:latest, newrelic-php-init:musl
+    image: newrelic/newrelic-node-init:latest
+    env:
+      - name: NEW_RELIC_APP_NAME
+        valueFrom:
+          fieldRef:
+            fieldPath: metadata.labels['app']
+  podLabelSelector:
+    matchExpressions:
+      - key: "app"
+        operator: "In"
+        values: ["demo-app"]
+
