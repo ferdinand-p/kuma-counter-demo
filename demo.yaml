@@ -68,7 +68,9 @@ spec:
           image: "radams371/kuma-counter-demo:latest"
           envFrom:
             - configMapRef:
-              name: "nr-license-key"           
+              name: nr-license-key
+            - secretRef:
+              name: nr-secret           
           env:
             - name: REDIS_HOST
               value: "redis.kuma-demo.svc.cluster.local"
