@@ -76,7 +76,7 @@ spec:
             - name: APP_COLOR
               value: "#efefef"
           envFrom:
-          - configMapRef:
+            - configMapRef:
               name: nr-license-key 
           ports:
             - name: http
