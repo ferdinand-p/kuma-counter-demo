@@ -84,11 +84,14 @@ spec:
         version: v1
     spec:
       containers:
+      - envFrom:
+        - configMapRef:
+            name: nr-license-key-otel
       - env:
         - name: OTEL_SERVICE_NAME
           value: demo-app
         - name: OTEL_EXPORTER_OTLP_ENDPOINT
-          value: http://opentelemetry-collector.mesh-observability:4317
+          value: https://otlp.nr-data.net:4317
         - name: KV_URL
           value: http://kv.kuma-demo.svc.cluster.local:5050
         - name: APP_VERSION
